@@ -284,6 +284,13 @@ impl ValidCryptoMaterial for Ed25519PublicKey {
     }
 }
 
+impl AsRef<[u8]> for Ed25519PublicKey {
+    fn as_ref(&self) -> &[u8] {
+        // &self.0
+        return self.0.as_bytes();
+    }
+}
+
 /////////////
 // Fuzzing //
 /////////////
